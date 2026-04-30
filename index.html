@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PARFUMĒRA – Offre CSE</title>
+  <title>PARFUMĒRA - Offre CSE</title>
   <style>
-    :root{
-      --bg: #f5f3f1;
-      --text: #2c2c2c;
-      --muted: #6d645b;
-      --accent: #ceb794;
-      --accent-dark: #b89461;
+    :root {
+      --bg: #f7f3ee;
       --card: #ffffff;
-      --border: rgba(0,0,0,0.08);
+      --text: #111111;
+      --muted: #333333;
+      --accent: #ceb794;
+      --accent-dark: #b99f74;
+      --border: rgba(0, 0, 0, 0.08);
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      --radius: 22px;
     }
 
     * {
@@ -26,322 +28,269 @@
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: var(--bg);
+      background: linear-gradient(180deg, #fbf8f4 0%, var(--bg) 100%);
       color: var(--text);
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+      text-align: center;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrapper {
-      max-width: 900px;
+    .page {
+      max-width: 980px;
       margin: 0 auto;
-      padding: 50px 24px 70px;
+      padding: 36px 18px 54px;
     }
 
     .hero {
-      text-align: center;
-      margin-bottom: 34px;
+      padding: 18px 10px 8px;
     }
 
     .logo {
       display: block;
-      margin: 0 auto 18px;
-      max-width: 210px;
+      margin: 0 auto 22px;
+      max-width: 280px;
       width: 100%;
       height: auto;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 14px;
-      line-height: 1.2;
-      letter-spacing: 0.2px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
     }
 
     h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-    }
-
-    h2 {
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
-      color: #1f1f1f;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent-dark);
-      margin-bottom: 10px;
-    }
-
-    p {
       margin: 0 0 14px;
-      font-size: 1.04rem;
-      color: var(--text);
-    }
-
-    .center {
-      text-align: center;
-    }
-
-    .section {
-      margin-top: 28px;
-      background: rgba(255,255,255,0.4);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px 24px;
-      backdrop-filter: blur(2px);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: #111;
     }
 
     .intro {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 780px;
-      margin: 0 auto;
+      max-width: 860px;
+      margin: 0 auto 24px;
+      font-size: clamp(1rem, 1.4vw, 1.08rem);
+      color: #222;
     }
 
-    .button-row {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 999px;
+    h2 {
+      margin: 26px 0 12px;
+      font-size: clamp(1.2rem, 2.2vw, 1.65rem);
       font-weight: 700;
-      letter-spacing: 0.2px;
-      transition: transform .2s ease, opacity .2s ease, background .2s ease;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 2px;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
+    .small-text {
+      max-width: 860px;
+      margin: 0 auto 18px;
+      font-size: 0.98rem;
+      color: #111;
     }
 
-    .btn-primary {
-      background: var(--accent-dark);
-      color: white;
+    .small-text a,
+    .contact a {
+      color: #111;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+      font-weight: 700;
     }
 
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid rgba(0,0,0,0.16);
-      color: var(--text);
+    .small-text a:hover,
+    .contact a:hover {
+      color: var(--accent-dark);
     }
 
-    .advantages {
-      background: var(--accent);
-      color: #1f1b17;
-      border: none;
-    }
-
-    .advantages h2,
-    .advantages h3,
-    .advantages p {
-      color: #1f1b17;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .adv-item {
-      background: rgba(255,255,255,0.28);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 16px;
-      padding: 16px 18px;
-      text-align: center;
-    }
-
-    .adv-item strong {
-      display: block;
-      font-size: 1.02rem;
-      margin-bottom: 2px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.45);
-      font-size: 0.92rem;
-      margin: 6px 6px 0 0;
-    }
-
-    .contact-box {
-      text-align: center;
-      background: #fff;
+    .box {
+      margin: 28px auto 24px;
+      padding: 28px 22px;
+      max-width: 920px;
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .contact-line {
-      font-size: 1.05rem;
-      margin-bottom: 8px;
+    .box h3 {
+      margin: 0 0 18px;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 7px;
+      text-decoration-thickness: 2px;
     }
 
-    .small {
-      font-size: 0.95rem;
-      color: var(--muted);
+    .benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 840px;
+      margin-inline: auto;
+      text-align: left;
+      font-size: 1rem;
+      color: #111;
     }
 
-    .divider {
-      height: 1px;
-      background: rgba(0,0,0,0.08);
-      margin: 24px 0;
+    .benefits li {
+      margin: 10px 0;
+      padding-left: 0;
     }
 
-    @media (min-width: 700px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
+    .benefits li::before {
+      content: "— ";
+      font-weight: 400;
+    }
+
+    .outside-text,
+    .personal-text,
+    .closing,
+    .contact-block {
+      max-width: 920px;
+      margin: 20px auto 0;
+      color: #111;
+      font-size: 1rem;
+    }
+
+    .outside-text {
+      margin-top: 10px;
+    }
+
+    .cta-wrap {
+      margin: 28px 0 24px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 15px 28px;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #fff;
+      color: #111;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-block {
+      margin-top: 22px;
+      padding-top: 10px;
+    }
+
+    .contact-title {
+      margin: 10px 0 8px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .contact {
+      margin: 8px 0;
+      font-size: 1.02rem;
+    }
+
+    .signature {
+      margin-top: 8px;
+      font-weight: 700;
+    }
+
+    .highlight {
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 26px 14px 40px;
       }
 
-      .adv-item.full {
-        grid-column: 1 / -1;
+      .box {
+        padding: 22px 16px;
+        border-radius: 18px;
+      }
+
+      .benefits {
+        font-size: 0.97rem;
+      }
+
+      .cta {
+        width: 100%;
+        max-width: 320px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="wrapper">
-
+  <main class="page">
     <section class="hero">
-      <img src="logo-parfumera.png" alt="Logo PARFUMĒRA" class="logo" />
+      <img src="logo-parfumera.png" alt="Logo Parfumera" class="logo" />
 
-      <h1>Offre CSE PARFUMĒRA</h1>
-      <p class="intro center">
+      <h1><strong>Offre CSE Parfumera</strong></h1>
+
+      <p class="intro">
         Découvrez une offre élégante, simple et avantageuse pour vos collaborateurs, avec un accès direct à un catalogue parfum et beauté pensé pour les avantages CSE.
       </p>
 
-      <div class="button-row">
-        <a class="btn btn-primary" href="https://www.parfumera.fr" target="_blank" rel="noopener noreferrer">
-          Visiter www.parfumera.fr
-        </a>
-        <a class="btn btn-secondary" href="Catalogue%20Parfumera%20Parfums%202026.pdf" target="_blank" rel="noopener noreferrer">
-          Ouvrir le catalogue PDF
-        </a>
-      </div>
-    </section>
-
-    <section class="section center">
       <h2>Un Fonctionnement Simple et Rapide</h2>
-      <p>
-        Connectez-vous sur
-        <a href="https://www.parfumera.fr" target="_blank" rel="noopener noreferrer"><strong>www.parfumera.fr</strong></a>
-      </p>
-      <p>
+
+      <p class="small-text">
+        Connectez-vous sur <a href="https://www.parfumera.fr" target="_blank" rel="noopener">www.parfumera.fr</a><br />
         Un code unique vous sera attribué afin de bénéficier immédiatement de vos avantages.
       </p>
     </section>
 
-    <section class="section advantages center">
-      <h2>Vos avantages exclusifs</h2>
-      <p>
-        Catalogue CSE/CE avec une sélection de parfums et privilèges spécialement pensés pour vos équipes [1].
-      </p>
+    <section class="box">
+      <h3>Vos Avantages Exclusifs</h3>
 
-      <div class="grid">
-        <div class="adv-item">
-          <strong>Société Française</strong>
-          <span>En Auvergne-Rhône-Alpes</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Plus de 250 Marques</strong>
-          <span>Un large choix de références</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Plus de 2000 Références</strong>
-          <span>De parfums sur le site [1]</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Remise Moyenne</strong>
-          <span><strong>-43%</strong> sur le catalogue [1]</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Prix Jusqu’à</strong>
-          <span><strong>-68%</strong> [1]</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Remise Supplémentaire</strong>
-          <span><strong>-3%</strong> [1]</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Livraison Gratuite</strong>
-          <span>Sans minimum de commande [1]</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Retour / Rétractation</strong>
-          <span>Jusqu’à 90 jours [1]</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Service Client Dédié</strong>
-          <span>04.81.74.16.40</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Gestion Simplifiée</strong>
-          <span>Achats et retours sans passer par le délégué CSE</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>4 Coffrets Offerts</strong>
-          <span>À faire gagner lors de vos événements</span>
-        </div>
-
-        <div class="adv-item">
-          <strong>Note de Satisfaction</strong>
-          <span>9,7/10 sur Avis Garantis</span>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <p class="small">
-        Le catalogue met aussi en avant une gamme 100% authentique, une livraison gratuite, un service client du lundi au vendredi et une formule sans minimum de commande [1].
-      </p>
+      <ul class="benefits">
+        <li><span class="highlight">Société Française</span> en Auvergne-Rhône-Alpes</li>
+        <li>Plus de <span class="highlight">10 000 produits</span> référencés de Parfumerie et de Cosmétique</li>
+        <li>Plus de <span class="highlight">250 Marques</span></li>
+        <li><span class="highlight">Remise</span> Moyenne sur le Catalogue de Parfum : <span class="highlight">-43%</span></li>
+        <li><span class="highlight">Remise</span> Supplémentaire : <span class="highlight">-3%</span></li>
+        <li>Livraison Gratuite sans minimum d’achat, à domicile ou sur le lieu de travail</li>
+        <li><span class="highlight">Retour</span> Produits sous <span class="highlight">90 jours</span></li>
+        <li>Service Client Dédié : <a href="tel:0481741640">04.81.74.16.40</a></li>
+        <li><span class="highlight">Gestion</span> des Achats et Retours sans passer par le délégué CSE</li>
+        <li><span class="highlight">4 Coffrets Offerts</span> à faire gagner lors de vos événements</li>
+        <li>Note de <span class="highlight">9,7/10</span> sur “Avis Garantis”</li>
+      </ul>
     </section>
 
-    <section class="section center">
-      <h2>Une Présentation de notre Société sur site est possible</h2>
-      <p>
-        Sur demande, nous pouvons venir avec des flyers et un commercial pour répondre aux questions de vos collaborateurs.
-      </p>
-      <p>
-        Parfuméra peut aussi s’adapter à vos structures et proposer une offre personnalisée.
-      </p>
+    <p class="outside-text">
+      Le Catalogue ci dessous vous permettra de Découvrir notre sélection de Parfums Non Exhaustive, nos Marques et le niveau de nos Remises.
+    </p>
+
+    <div class="cta-wrap">
+      <a class="cta" href="Catalogue%20Parfumera%20Parfums%202026.pdf" target="_blank" rel="noopener">
+        Ouvrir le catalogue
+      </a>
+    </div>
+
+    <section class="personal-text">
+      Parfuméra a aussi la Possibilité de s’adapter à vos Structures et vous proposez une Offre Personnalisée.<br />
+      Une Présentation de notre Société sur site est possible sur demande, avec Flyers et Commercial pour répondre aux Questions de vos Collaborateurs.
     </section>
 
-    <section class="section contact-box">
-      <h2>Nous Contacter</h2>
-      <p>
-        N'hésitez pas à nous contacter pour avoir plus d'information, dans l'attente de vous compter parmi nos partenaires.
+    <section class="contact-block">
+      <p class="closing">
+        N’hésitez Pas à nous Contacter pour avoir plus d’information, dans l’Attente de vous Compter parmi nos Partenaires.
       </p>
 
-      <p class="contact-line"><strong>Votre Interlocuteur Dédié — Mr Tayeb</strong></p>
-      <p class="contact-line">✆ 06.19.46.21.48</p>
-      <p class="contact-line">✉ cse@parfumera.fr</p>
+      <p class="contact-title">Votre Interlocuteur Dédié :</p>
+      <p class="contact">Mr Tayeb</p>
+      <p class="contact"><a href="tel:0619462148">06.19.46.21.48</a></p>
+      <p class="contact"><a href="mailto:cse@parfumera.fr">cse@parfumera.fr</a></p>
     </section>
-
   </main>
 </body>
 </html>
